@@ -219,6 +219,10 @@
 		},
         {
 			"name": "Candy Blast",
+			"source": "Hombrew",
+			"page": 0,
+			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -234,56 +238,160 @@
 					"amount": 60
 				}
 			},
+			"components": {
+				"v": true,
+				"s": true
+			},
 			"duration": [
 				{
 					"type": "instant"
 				}
 			],
-			"classes": {
-				"fromClassList": [
-					{
-						"name": "Sorcerer",
-						"source": "PHB"
-					},
-					{
-						"name": "Wizard",
-						"source": "PHB"
-					}
-				]
-			},
 			"entries": [
-				"Invocas un puñado de caramelos duros (dulces hervidos, mentas, gominolas, etc.) y los arrojas a un objetivo que puedas ver dentro del alcance. Haz una tirada de ataque con hechizos a distancia. Con un golpe, el objetivo sufre {@damage 1d8} de daño contundente y el espacio en el que se encuentra, hasta un cuadrado de 5 pies, se convierte en terreno difícil hasta que una criatura usa una acción para recoger los dulces caídos. El caramelo producido por este hechizo es comestible, pero no tiene valor nutricional."
+						"Invocas un puñado de caramelos duros (dulces hervidos, mentas, gominolas, etc.) y los arrojas a un objetivo que puedas ver dentro del alcance. Haz una tirada de ataque con hechizos a distancia. Con un golpe, el objetivo sufre {@damage 1d8} de daño contundente y el espacio en el que se encuentra, hasta un cuadrado de 5 pies, se convierte en terreno difícil hasta que una criatura usa una acción para recoger los dulces caídos. El caramelo producido por este hechizo es comestible, pero no tiene valor nutricional.", 
+						"El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 ({@damage 2d8}), el nivel 11 ({@damage 3d8}) y el nivel 17 ({@damage 4d8})."
 			],
-			"entriesHigherLevel": [
-				{
-					"name": "At Higher Levels",
-					"entries": [
-						"El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 {@dice 2d8}, el nivel 11 {@dice 3d8} y el nivel 17 {@dice 4d8}."
-					],
-					"type": "entries"
+			"scalingLevelDice": {
+				"label": "candy blast",
+				"scaling": {
+					"1": "1d8",
+					"5": "2d8",
+					"11": "3d8",
+					"17": "4d8"
 				}
-			],
+			},
 			"damageInflict": [
-				"contundente"
+				"bludgeoning"
 			],
 			"spellAttack": [
 				"R"
 			],
-			"source": "VSS",
-			"page": 332,
+			"miscTags": [
+				"SCL",
+				"SGT"
+			],
+			"areaTags": [
+				"ST",
+				"MT"
+			]
+		},
+		{
+			"name": "Candy Splash",
+			"source": "Hombrew",
+			"page": 211,
+			"srd": true,
+			"basicRules": true,
+			"level": 0,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
 			"components": {
 				"v": true,
 				"s": true
 			},
-			"miscTags": [
-				"SMN"
-			],
-			"fluff": {
-				"_spellFluff": {
-					"name": "Candy Blast",
-					"source": "TPK"
+			"duration": [
+				{
+					"type": "instant"
 				}
-			}
+			],
+			"entries": [
+				"You hurl a bubble of candy caramel. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take {@damage 1d6} bludgeoning damage.",
+				"This spell's damage increases by {@dice 1d6} when you reach 5th level ({@damage 2d6}), 11th level ({@damage 3d6}), and 17th level ({@damage 4d6})."
+			],
+			"scalingLevelDice": {
+				"label": "bludgeoning damage",
+				"scaling": {
+					"1": "1d6",
+					"5": "2d6",
+					"11": "3d6",
+					"17": "4d6"
+				}
+			},
+			"damageInflict": [
+				"bludgeoning"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"SCL",
+				"SGT"
+			],
+			"areaTags": [
+				"ST",
+				"MT"
+			]
+		},
+		{
+			"name": "Aid",
+			"source": "PHB",
+			"page": 211,
+			"srd": true,
+			"basicRules": true,
+			"otherSources": [
+				{
+					"source": "RMR",
+					"page": 50
+				}
+			],
+			"level": 2,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a tiny strip of white cloth"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 8
+					}
+				}
+			],
+			"entries": [
+				"Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
+					]
+				}
+			],
+			"miscTags": [
+				"HL"
+			],
+			"areaTags": [
+				"MT"
+			]
 		}   
 	]
 }
