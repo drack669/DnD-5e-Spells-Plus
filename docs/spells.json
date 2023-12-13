@@ -236,11 +236,7 @@
 			},
 			"duration": [
 				{
-					"type": "timed",
-					"duration": {
-						"type": "round",
-						"amount": 1
-					}
+					"type": "instant"
 				}
 			],
 			"classes": {
@@ -256,7 +252,22 @@
 				]
 			},
 			"entries": [
-				"Invocas un puñado de caramelos duros (dulces hervidos, mentas, gominolas, etc.) y los arrojas a un objetivo que puedas ver dentro del alcance. Haz una tirada de ataque con hechizos a distancia. Con un golpe, el objetivo sufre 1d8 de daño contundente y el espacio en el que se encuentra, hasta un cuadrado de 5 pies, se convierte en terreno difícil hasta que una criatura usa una acción para recoger los dulces caídos. El caramelo producido por este hechizo es comestible, pero no tiene valor nutricional."
+				"Invocas un puñado de caramelos duros (dulces hervidos, mentas, gominolas, etc.) y los arrojas a un objetivo que puedas ver dentro del alcance. Haz una tirada de ataque con hechizos a distancia. Con un golpe, el objetivo sufre {@damage 1d8} de daño contundente y el espacio en el que se encuentra, hasta un cuadrado de 5 pies, se convierte en terreno difícil hasta que una criatura usa una acción para recoger los dulces caídos. El caramelo producido por este hechizo es comestible, pero no tiene valor nutricional."
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 {@dice 2d8}, el nivel 11 {@dice 3d8} y el nivel 17 {@dice 4d8}."
+					],
+					"type": "entries"
+				}
+			],
+			"damageInflict": [
+				"contundente"
+			],
+			"spellAttack": [
+				"R"
 			],
 			"source": "VSS",
 			"page": 332,
